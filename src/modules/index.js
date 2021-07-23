@@ -2,5 +2,6 @@
 //runtime import - thanks to this we can use async function
 import regeneratorRuntime from "regenerator-runtime";
 
+import AST from "./classes/ASTConvert";
 
-
+const ast = new AST();
