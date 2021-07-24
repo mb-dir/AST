@@ -55,7 +55,8 @@ class AST{
         }
         //Add attributes to element - https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript
         Object.assign(element, attributesObj);
-        console.log(element.outerHTML)
+        
+        this.mainElement = element.outerHTML;
     }
 }
 
