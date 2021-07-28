@@ -63,6 +63,8 @@ class AST{
     //This is recursion method, it will be call as long as there is "children" property in object passed as a attribute to this method.
     //In first call "parentElement" === this.mainElement, "children" === this.ASTObject.children(I assume that there must be at least one child element)
     addChildren(parentElement, children){
+      //Key is totaly unnecessary(it shows index of array), but if I want to use for ... of loop with Object.entries I have to have two values in destructuring expression
+      //If there is something like const [childElement] of Object.entries(children)), the childElement takes over the roles of index
       for(const [key, childElement] of Object.entries(children)){
         if(childElement.nodeType === "element"){
           const element = document.createElement(childElement.tagName);
