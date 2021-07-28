@@ -63,7 +63,14 @@ class AST{
     //In first call "parentElement" === this.mainElement, "children" === this.ASTObject.children(I assume that there must be at least one child element)
     addChildren(parentElement, children){
       for(const [key, childElement] of Object.entries(children)){
-        console.log(key, childElement)
+        if(childElement.nodeType === "element"){
+          console.log(parentElement)
+          const element = document.createElement(childElement.tagName);
+
+          parentElement.appendChild(element);
+        }else{
+          parentElement.innerHTML = childElement.value;
+        }
         //This condition provides that this method will not call indefinitely
         if(childElement.children){
           //in subsequent calls, "childElement" becomes the parent element
