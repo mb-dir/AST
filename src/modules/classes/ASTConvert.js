@@ -64,17 +64,18 @@ class AST{
     addChildren(parentElement, children){
       for(const [key, childElement] of Object.entries(children)){
         if(childElement.nodeType === "element"){
-          console.log(parentElement)
           const element = document.createElement(childElement.tagName);
 
           parentElement.appendChild(element);
+
+          //This condition provides that this method will not call indefinitely
+          if(childElement.children){
+            //in subsequent calls, "element" creating in this iterate becomes the parent element
+            this.addChildren(element, childElement.children);
+          }
         }else{
+          //I provide that if nodeType is not an "element" it must be text, and it is the last node
           parentElement.innerHTML = childElement.value;
-        }
-        //This condition provides that this method will not call indefinitely
-        if(childElement.children){
-          //in subsequent calls, "childElement" becomes the parent element
-          this.addChildren(childElement, childElement.children);
         }
       }
     }
