@@ -57,7 +57,7 @@ class AST{
         //Add attributes to element - https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript
         Object.assign(element, attributesObj);
         
-        this.mainElement = element.outerHTML;
+        this.mainElement = element;
     }
     //This is recursion method, it will be call as long as there is "children" property in object passed as a attribute to this method.
     //In first call "parentElement" === this.mainElement, "children" === this.ASTObject.children(I assume that there must be at least one child element)
