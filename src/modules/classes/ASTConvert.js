@@ -4,6 +4,7 @@ class AST{
         this.mainElement = null;
 
         this.convertASTToString(this.ASTObject);
+        this.addChildren(this.mainElement, this.ASTObject.children);
     }
     convertASTToString(obj){
         this.createMainElement(obj);
@@ -57,6 +58,18 @@ class AST{
         Object.assign(element, attributesObj);
         
         this.mainElement = element.outerHTML;
+    }
+    //This is recursion method, it will be call as long as there is "children" property in object passed as a attribute to this method.
+    //In first call "parentElement" === this.mainElement, "children" === this.ASTObject.children(I assume that there must be at least one child element)
+    addChildren(parentElement, children){
+      for(const [key, childElement] of Object.entries(children)){
+        console.log(key, childElement)
+        //This condition provides that this method will not call indefinitely
+        if(childElement.children){
+          //in subsequent calls, "childElement" becomes the parent element
+          this.addChildren(childElement, childElement.children);
+        }
+      }
     }
 }
 
