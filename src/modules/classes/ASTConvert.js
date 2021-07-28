@@ -4,10 +4,11 @@ class AST{
         this.mainElement = null;
 
         this.convertASTToString(this.ASTObject);
-        this.addChildren(this.mainElement, this.ASTObject.children);
     }
     convertASTToString(obj){
         this.createMainElement(obj);
+        this.addChildren(this.mainElement, this.ASTObject.children);
+        console.log(this.mainElement.outerHTML);
     }
     //Method which creates main element(with attributes). Children elements will be added by other method
     //The main element cannnot be text, it must be an element like p or span or div etc
