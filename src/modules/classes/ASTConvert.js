@@ -7,7 +7,7 @@ class AST{
     }
     convertASTToString(obj){
         this.createMainElement(obj);
-        this.addChildren(this.mainElement, this.ASTObject.children);
+        this.addChildren(this.mainElement, obj.children);
         console.log(this.mainElement.outerHTML);
     }
     //Method which creates main element(with attributes). Children elements will be added by other method
