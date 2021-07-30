@@ -92,6 +92,8 @@ class AST{
 
     drawASTString(){
       const container = document.querySelector(".container");
+      const ASTStringPlace = document.querySelector(".container__ASTString");
+      ASTStringPlace.textContent = this.mainElement.outerHTML;
       container.appendChild(this.mainElement);
     }
 }
