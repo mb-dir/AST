@@ -2,6 +2,9 @@
 //runtime import - thanks to this we can use async function
 import regeneratorRuntime from "regenerator-runtime";
 
+// styles import
+import "../styles/main.css";
+
 import AST from "./classes/ASTConvert";
 
 const ASTObject = {

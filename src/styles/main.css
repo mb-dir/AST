@@ -1,0 +1,27 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgba(31,31,31,1);
+    color: beige;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+/* a in case when in AST object is <a> tag, bgc is dark, so I want to have contrast*/
+.link, a{
+    color: #f7575d;
+}
+/* Styles only for element based on this object - https://przeprogramowani.netlify.app/examples/ast.json - it only has an aesthetic value*/
+.profile{
+    border: 2px solid #f7575d;
+    height: 300px;
+    width: 160px;
+    margin-top: 40px;
+}
+.profile__avatar{
+    width: 100%;
+}
