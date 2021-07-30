@@ -9,7 +9,6 @@ class AST{
         this.createMainElement(obj);
         this.addChildren(this.mainElement, obj.children);
         this.drawASTString();
-        console.log(this.mainElement.outerHTML);
     }
     //Method which creates main element(with attributes). Children elements will be added by other method
     //The main element cannnot be text, it must be an element like p or span or div etc
