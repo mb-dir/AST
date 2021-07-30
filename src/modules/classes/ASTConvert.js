@@ -8,6 +8,7 @@ class AST{
     convertASTToString(obj){
         this.createMainElement(obj);
         this.addChildren(this.mainElement, obj.children);
+        this.drawASTString();
         console.log(this.mainElement.outerHTML);
     }
     //Method which creates main element(with attributes). Children elements will be added by other method
@@ -87,6 +88,11 @@ class AST{
       }
       //Add attributes to element - https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript
       Object.assign(element, attributesObj);
+    }
+
+    drawASTString(){
+      const container = document.querySelector(".container");
+      container.appendChild(this.mainElement);
     }
 }
 
