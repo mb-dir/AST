@@ -10,6 +10,7 @@ body{
 .container{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 /* a in case when in AST object is <a> tag, bgc is dark, so I want to have contrast*/
 .link, a{
