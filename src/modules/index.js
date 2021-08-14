@@ -7,6 +7,12 @@ import "../styles/main.css";
 
 import AST from "./classes/ASTConvert";
 
+//DOM variables
+
+//Variables for the sample call
+const exampleContainer = document.querySelector("#exampleContainer");
+const exampleASTStringPlace = exampleContainer.querySelector("#ASTString");
+
 const ASTObject = {
     "nodeType": "element",
     "tagName": "div",
@@ -109,5 +115,5 @@ const ASTObject = {
       }
     ]
   }
-
-const ast = new AST(ASTObject);
+//This is only sample
+const ast = new AST(ASTObject, exampleASTStringPlace, exampleContainer);
