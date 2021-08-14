@@ -120,6 +120,7 @@ const ast = new AST(ASTObject, exampleASTStringPlace, exampleContainer);
 
 //Handling input data
 const ASTForm = document.querySelector("#ASTContainer");
+const ASTConvertString = document.querySelector("#ASTConvertString");
 
 ASTForm.addEventListener("submit",(e)=>{
   e.preventDefault();
