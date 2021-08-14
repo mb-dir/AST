@@ -93,10 +93,13 @@ class AST{
     }
 
     drawASTString(){
-      const container = document.querySelector("#exampleContainer");
-      const ASTStringPlace = container.querySelector("#ASTString");
-      ASTStringPlace.textContent = this.mainElement.outerHTML;
-      container.appendChild(this.mainElement);
+      //Always add convert string to to the indicated HTML element
+      this.placeForConvertString.textContent = this.mainElement.outerHTML;
+      //This applies only to the example of an AST call(in the example the converted object is added to the page)
+      //If it is not sample with ASTObject(look index.js) this.placeForConvertElement === null and there will not be appendChild
+      if(this.placeForConvertElement){
+        this.placeForConvertElement.appendChild(this.mainElement);
+      }
     }
 }
 
