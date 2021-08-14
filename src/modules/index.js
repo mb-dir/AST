@@ -123,5 +123,7 @@ const ASTForm = document.querySelector("#ASTContainer");
 
 ASTForm.addEventListener("submit",(e)=>{
   e.preventDefault();
-  console.log("jd")
+  
+  const objToConvert = ASTForm.querySelector("#ASTObject").value.trim();
+  console.log(objToConvert)
 });
