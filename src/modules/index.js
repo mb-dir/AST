@@ -125,6 +125,7 @@ const ASTConvertString = document.querySelector("#ASTConvertString");
 ASTForm.addEventListener("submit",(e)=>{
   e.preventDefault();
   
-  const objToConvert = ASTForm.querySelector("#ASTObject").value.trim();
+  const stringToConvert = ASTForm.querySelector("#ASTObject").value.trim();
+  const objToConvert = JSON.parse(stringToConvert);
   const astUser = new AST(objToConvert, ASTConvertString);
 });
