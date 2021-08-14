@@ -117,3 +117,11 @@ const ASTObject = {
   }
 //This is only sample
 const ast = new AST(ASTObject, exampleASTStringPlace, exampleContainer);
+
+//Handling input data
+const ASTForm = document.querySelector("#ASTContainer");
+
+ASTForm.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  console.log("jd")
+});
