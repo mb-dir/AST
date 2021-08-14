@@ -1,6 +1,9 @@
 class AST{
-    constructor(ASTObject){
+    constructor(ASTObject, placeForConvertString, placeForConvertElement = null){
         this.ASTObject = ASTObject;
+        this.placeForConvertString = placeForConvertString;
+        //This property will be useful ony for sample(calling the AST without getting object form user, but based on ASTObject(index.js))
+        this.placeForConvertElement = placeForConvertElement;
         this.mainElement = null;
 
         this.convertASTToString(this.ASTObject);
