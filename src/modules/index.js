@@ -126,5 +126,5 @@ ASTForm.addEventListener("submit",(e)=>{
   e.preventDefault();
   
   const objToConvert = ASTForm.querySelector("#ASTObject").value.trim();
-  console.log(objToConvert)
+  const astUser = new AST(objToConvert, ASTConvertString);
 });
