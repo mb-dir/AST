@@ -7,6 +7,7 @@ body{
     background-color: rgba(31,31,31,1);
     color: beige;
 }
+/* styles for example container */
 .exampleContainer{
     display: flex;
     justify-content: center;
@@ -25,4 +26,24 @@ body{
 }
 .profile__avatar{
     width: 100%;
+}
+
+/* styles for the main part of app */
+
+/* styles for inputs */
+.ASTContainer{
+    margin-top: 50px;
+}
+.ASTContainer__label{
+    display: block;
+    margin: 5px;
+}
+.ASTContainer__objectPlace{
+    width: 90%;
+    height: 400px;
+    resize: none;
+}
+/* styles for outputs */
+.ASTConvertContainer{
+    margin: 40px;
 }
