@@ -125,7 +125,12 @@ const ASTConvertString = document.querySelector("#ASTConvertString");
 ASTForm.addEventListener("submit",(e)=>{
   e.preventDefault();
   
-  const stringToConvert = ASTForm.querySelector("#ASTObject").value.trim();
-  const objToConvert = JSON.parse(stringToConvert);
-  const astUser = new AST(objToConvert, ASTConvertString);
+  try {
+    const stringToConvert = ASTForm.querySelector("#ASTObject").value.trim();
+    const objToConvert = JSON.parse(stringToConvert);
+    const astUser = new AST(objToConvert, ASTConvertString);
+  } catch (error) {
+    console.log(error)
+    alert("Błędna składnia, poprawna składnia ma wyglądać mniej więcej tak jak na tej stronie: https://przeprogramowani.pl/examples/ast.json. Uruchom konsole, aby uzyskać informacje na której pozycji występiuje błąd")
+  }
 });
