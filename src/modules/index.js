@@ -7,6 +7,12 @@ import "../styles/main.css";
 
 import AST from "./classes/ASTConvert";
 
+//DOM variables
+
+//Variables for the sample call
+const exampleContainer = document.querySelector("#exampleContainer");
+const exampleASTStringPlace = exampleContainer.querySelector("#ASTString");
+
 const ASTObject = {
     "nodeType": "element",
     "tagName": "div",
@@ -109,5 +115,22 @@ const ASTObject = {
       }
     ]
   }
+//This is only sample
+const ast = new AST(ASTObject, exampleASTStringPlace, exampleContainer);
 
-const ast = new AST(ASTObject);
+//Handling input data
+const ASTForm = document.querySelector("#ASTContainer");
+const ASTConvertString = document.querySelector("#ASTConvertString");
+
+ASTForm.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  
+  try {
+    const stringToConvert = ASTForm.querySelector("#ASTObject").value.trim();
+    const objToConvert = JSON.parse(stringToConvert);
+    const astUser = new AST(objToConvert, ASTConvertString);
+  } catch (error) {
+    console.log(error)
+    alert("Błędna składnia, poprawna składnia ma wyglądać mniej więcej tak jak na tej stronie: https://przeprogramowani.pl/examples/ast.json. Uruchom konsole, aby uzyskać informacje na której pozycji występiuje błąd")
+  }
+});

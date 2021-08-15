@@ -1,6 +1,9 @@
 class AST{
-    constructor(ASTObject){
+    constructor(ASTObject, placeForConvertString, placeForConvertElement = null){
         this.ASTObject = ASTObject;
+        this.placeForConvertString = placeForConvertString;
+        //This property will be useful ony for sample(calling the AST without getting object form user, but based on ASTObject(index.js))
+        this.placeForConvertElement = placeForConvertElement;
         this.mainElement = null;
 
         this.convertASTToString(this.ASTObject);
@@ -90,10 +93,13 @@ class AST{
     }
 
     drawASTString(){
-      const container = document.querySelector(".container");
-      const ASTStringPlace = document.querySelector(".container__ASTString");
-      ASTStringPlace.textContent = this.mainElement.outerHTML;
-      container.appendChild(this.mainElement);
+      //Always add convert string to to the indicated HTML element
+      this.placeForConvertString.textContent = this.mainElement.outerHTML;
+      //This applies only to the example of an AST call(in the example the converted object is added to the page)
+      //If it is not sample with ASTObject(look index.js) this.placeForConvertElement === null and there will not be appendChild
+      if(this.placeForConvertElement){
+        this.placeForConvertElement.appendChild(this.mainElement);
+      }
     }
 }
 
