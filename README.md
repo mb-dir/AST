@@ -4,4 +4,4 @@ Task ending one of the [course](https://przeprogramowani.pl/kurs-javascript) sta
 
 ## Task description
 
-I have to write module which returnes **convertASTToString** method which convert Abstract Syntax Tree objext into HTML string. More details [here](https://przeprogramowani.netlify.app/opanuj-javascript_ast.pdf).
+The main purpose of this task is creating a logic which will convert AST object into string which is ready to use as a HTML on page. More details [here](https://przeprogramowani.netlify.app/opanuj-javascript_ast.pdf).
