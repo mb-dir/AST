@@ -1,0 +1,65 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgba(31,31,31,1);
+    color: beige;
+}
+/* styles for example container */
+.exampleContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* a in case when in AST object is <a> tag, bgc is dark, so I want to have contrast*/
+.link, a{
+    color: #f7575d;
+}
+/* Styles only for element based on this object - https://przeprogramowani.netlify.app/examples/ast.json - it only has an aesthetic value*/
+.profile{
+    border: 2px solid #f7575d;
+    height: 300px;
+    width: 160px;
+    margin-top: 40px;
+}
+.profile__avatar{
+    width: 100%;
+}
+
+/* styles for the main part of app */
+
+/* styles for inputs */
+.ASTContainer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.ASTContainer__label{
+    display: block;
+    margin: 5px;
+}
+.ASTContainer__objectPlace{
+    width: 90%;
+    height: 400px;
+    resize: none;
+}
+.ASTContainer__btn{
+    width: 150px;
+    height: 43px;
+    margin: 20px 10px 10px;
+    border: 3px solid #f7575d;
+    border-radius: 5px;
+    color: beige;
+    background-color: rgba(31,31,31,1);
+    font-size: 17px;
+}
+.ASTContainer__btn:hover{
+    cursor: pointer;
+}
+/* styles for outputs */
+.ASTConvertContainer{
+    margin-bottom: 60px;
+}
